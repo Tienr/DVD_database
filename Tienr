@@ -1,0 +1,36 @@
+class DVD:
+    def __init__(self, Title,DVDType ,Cost):
+        self._Title = Title
+        self._Type =  DVDType
+        self._Cost = Cost
+
+    def get_Title (self):
+        return self._Title
+    def set_Title(self,New_Title):
+        if New_Title =="":
+            print ("Need to input new Title")
+        else:
+            self_Title = New_Title
+            input ("Please in put new Title ")
+            Title = property ( get_Title, set_Title )
+
+
+    def get_Type (self):
+        return self._Type
+    def set_Type (self, New_Type):
+        Dvdtype = ["Game","Word","Compiler","Spreadsheet","Dbase","Presentation"]
+        if New_Type in  Dvdtype:
+            return New_Type
+        else:
+            self._Type = New_Type
+            print ("Invalid")
+    Type = property (get_Type,set_Type)
+
+    def get_Cost (self):
+        return self._Cost
+    Cost = property (get_Cost)
+
+DVD1 = DVD ("love","Word",20)
+print (DVD1.set_Title(""))
+print (DVD1.set_Type("Spreadsheet"))
+print (DVD1.get_Cost())
